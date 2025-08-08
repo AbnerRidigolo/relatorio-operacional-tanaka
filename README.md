@@ -1,31 +1,30 @@
 📊 Relatório Operacional – Tanaka
-
-Dashboard interativo desenvolvido em Python com Streamlit para análise operacional baseada em dados de planilha Excel. O sistema gera KPIs, gráficos e insights de produtividade, ocorrências, uso de veículos e atividades por setor.
+Este projeto é uma aplicação desenvolvida em Python utilizando Streamlit para gerar relatórios operacionais a partir de uma planilha Excel. A ferramenta é voltada para o acompanhamento de indicadores logísticos, produtividade da equipe e uso de veículos.
 
 🚀 Funcionalidades
-📥 Upload de planilha .xlsx com dados operacionais
+Upload de planilha .xlsx com os dados operacionais.
 
-📊 Exibição de indicadores chave:
+Cálculo automático de KPIs:
 
-Total de pedidos
+Total de Pedidos
 
-Média de colaboradores
+Média de Colaboradores
 
-Peso total movimentado
+Total de Peso
 
-Ocorrências e avarias
+Total de Ocorrências e Avarias
 
-Produtividade por colaborador
+Produtividade por Colaborador
 
-📈 Gráficos:
+Visualização gráfica:
 
-Uso de veículos por tipo
+Uso de veículos
 
-Total por setor (recebimento, expedição, organização, embalamento)
+Total por setor
 
-Evolução de pedidos por data
+Pedidos por dia
 
-🔍 Visualização completa do DataFrame original carregado
+Exibição da base de dados original (com opção de expandir ou ocultar).
 
 🛠️ Tecnologias Utilizadas
 Python 3.10+
@@ -34,66 +33,49 @@ Streamlit
 
 Pandas
 
-Matplotlib
-
 Seaborn
 
-openpyxl (para leitura de arquivos .xlsx)
+Matplotlib
 
-📂 Estrutura esperada da planilha
-A aba da planilha (Página1 por padrão) deve conter, ao menos, as seguintes colunas:
+OpenPyXL (para leitura de arquivos Excel)
 
-DATA
-
-QTD PEDIDOS
-
-QTD.COLABORADORES
-
-PESO TOTAL
-
-OCORRÊNCIAS
-
-AVARIAS
-
-QTD VUC, QTD DUCATO, QTD HR, QTD FIORINO, QTD MONTANA, QTD SAVEIRO
-
-RECEBIMENTOS, EXPEDIÇÃO, ORGANIZAÇÃO INTERNA, EMBALAMENTO
-
-▶️ Como executar
-Clone o repositório:
-
+📂 Estrutura de Arquivos
 bash
 Copiar
 Editar
-git clone https://github.com/seu-usuario/relatorio-operacional-tanaka.git
-cd relatorio-operacional-tanaka
-Crie e ative um ambiente virtual (opcional, mas recomendado):
-
-bash
-Copiar
-Editar
-python -m venv venv
-source venv/bin/activate  # Linux/macOS
-venv\Scripts\activate     # Windows
-Instale as dependências:
+.
+├── app.py                  # Código principal do Streamlit
+├── pythonlog.xlsx          # Planilha de exemplo com os dados operacionais
+└── README.md               # Documentação do projeto
+🧾 Requisitos
+Certifique-se de ter o Python instalado e depois instale as dependências com:
 
 bash
 Copiar
 Editar
 pip install -r requirements.txt
-Execute o app:
+Exemplo de requirements.txt:
+
+nginx
+Copiar
+Editar
+streamlit
+pandas
+openpyxl
+matplotlib
+seaborn
+▶️ Como Executar
+Coloque o arquivo pythonlog.xlsx na mesma pasta do app.py ou use o upload via interface.
+
+Execute o Streamlit com o comando:
 
 bash
 Copiar
 Editar
 streamlit run app.py
-📎 Exemplo de uso
-
-Interface do dashboard com KPIs e gráficos interativos.
+Acesse no navegador: http://localhost:8501
 
 📌 Observações
-Um arquivo de exemplo chamado pythonlog.xlsx pode ser usado como base para os dados.
+O arquivo padrão é pythonlog.xlsx com a aba chamada Página1.
 
-O app pode ser usado com upload manual ou com o arquivo padrão presente na raiz do projeto.
-
-Todas as transformações e agregações estão cacheadas para desempenho com @st.cache_data.
+Caso deseje utilizar outro arquivo ou aba, utilize as opções na barra lateral esquerda da aplicação.
